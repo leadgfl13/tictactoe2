@@ -1,3 +1,22 @@
 body{
     background-color:blue;
 }
+
+
+#board{
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height:1200px;
+    width:1200px;
+    margin:auto;
+    background-color:green;
+
+}
+
+
+#square{
+    border:2px black solid;
+    background-color:Gray;
+
+}
