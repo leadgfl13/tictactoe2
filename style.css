@@ -11,12 +11,18 @@ body{
     width:1200px;
     margin:auto;
     background-color:green;
+    
 
 }
 
 
 #square{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
     border:2px black solid;
     background-color:Gray;
+    margin:0px;
 
 }
