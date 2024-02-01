@@ -19,6 +19,10 @@ const gameboard = (function(){
         squares.push(square)
         board.append(square)
         square.addEventListener('click',()=>{
+            if(square.innerHTML){
+                return
+            }
+            else{
             square.innerHTML = currentPlayer.marker
             if(currentPlayer == player1){
                 currentPlayer = player2
@@ -26,13 +30,11 @@ const gameboard = (function(){
          else if (currentPlayer == player2){
             currentPlayer = player1
             
-        }    check() }
-        
+        }    check() }}
         )
     }
         }
 )
-
 ();
 
 function check(){
