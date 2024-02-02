@@ -28,9 +28,9 @@ const gameboard = (function(){
                 currentPlayer = player2
             }
          else if (currentPlayer == player2){
-            currentPlayer = player1
-            
-        }    check() }}
+            currentPlayer = player1   
+        }    
+        check() }}
         )
     }
         }
@@ -38,10 +38,33 @@ const gameboard = (function(){
 ();
 
 function check(){
-    if(squares[0].innerHTML == 'X' && squares[1].innerHTML == 'X' && squares[2].innerHTML == 'X'){
-        console.log("Hello")
+    if(squares[0].innerHTML == 'X' && squares[1].innerHTML == 'X' && squares[2].innerHTML == 'X' ||
+    squares[3].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[5].innerHTML == 'X' ||
+    squares[6].innerHTML == 'X' && squares[7].innerHTML == 'X' && squares[8].innerHTML == 'X'||
+    squares[0].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[8].innerHTML == 'X' ||
+    squares[2].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[6].innerHTML == 'X' ||
+    squares[0].innerHTML == 'X' && squares[3].innerHTML == 'X' && squares[6].innerHTML == 'X'||
+    squares[1].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[7].innerHTML == 'X' ||
+    squares[2].innerHTML == 'X' && squares[5].innerHTML == 'X' && squares[8].innerHTML == 'X' 
+    )
+     console.log('player 1 wins!')
+
+    if (squares[0].innerHTML == 'O' && squares[1].innerHTML == 'O' && squares[2].innerHTML == 'O' ||
+     squares[3].innerHTML == 'O' && squares[4].innerHTML == 'O' && squares[5].innerHTML == 'O' ||
+     squares[6].innerHTML == 'O' && squares[7].innerHTML == 'O' && squares[8].innerHTML == 'O'||
+     squares[0].innerHTML == 'O' && squares[4].innerHTML == 'O' && squares[8].innerHTML == 'O' ||
+     squares[2].innerHTML == 'O' && squares[4].innerHTML == 'O' && squares[6].innerHTML == 'O' ||
+     squares[0].innerHTML == 'O' && squares[3].innerHTML == 'O' && squares[6].innerHTML == 'O'||
+     squares[1].innerHTML == 'O' && squares[4].innerHTML == 'O' && squares[7].innerHTML == 'O' ||
+     squares[2].innerHTML == 'O' && squares[5].innerHTML == 'O' && squares[8].innerHTML == 'O')
+     console.log('player2 wins')
+
     }
-}
+    if (squares[0].innerHTML !=' ' && squares[1].innerHTML!=' ' && squares[2].innerHTML!=' ' && squares[3].innerHTML!=' ' && squares[4].innerHTML!=' ' && squares[5].innerHTML!=' ' &&
+        squares[6].innerHTML!=' ' && squares[7].innerHTML!=' ' && squares[8].innerHTML!=' '){
+            console.log('tie')
+        }
+
 
 
 
