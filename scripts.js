@@ -59,12 +59,12 @@ function check(){
      squares[2].innerHTML == 'O' && squares[5].innerHTML == 'O' && squares[8].innerHTML == 'O')
      console.log('player2 wins')
 
-    }
-    if (squares[0].innerHTML !=' ' && squares[1].innerHTML!=' ' && squares[2].innerHTML!=' ' && squares[3].innerHTML!=' ' && squares[4].innerHTML!=' ' && squares[5].innerHTML!=' ' &&
-        squares[6].innerHTML!=' ' && squares[7].innerHTML!=' ' && squares[8].innerHTML!=' '){
+    
+    else if (squares[0].innerHTML !='' && squares[1].innerHTML!='' && squares[2].innerHTML!='' && squares[3].innerHTML!=''
+     && squares[4].innerHTML!='' && squares[5].innerHTML!='' &&squares[6].innerHTML!='' && squares[7].innerHTML!='' && squares[8].innerHTML!=''){
             console.log('tie')
         }
-
+    }
 
 
 
