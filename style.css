@@ -26,3 +26,19 @@ body{
     margin:0px;
 
 }
+
+form{
+    align-self:center;
+    display:none;
+    font-size:40px;
+    width:500px;
+}
+
+label{
+    font-size:40px;
+}
+
+input[type='text']{
+font-size:40px;
+background-color:skyblue;
+}

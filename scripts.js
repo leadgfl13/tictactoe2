@@ -1,20 +1,41 @@
+// make a function for a start button that gets the players first, then when you submit the players, call the gabemboard object!
+let start = (function(){
+   let start = document.createElement('button')
+   start.innerHTML = 'Start Game'
+   document.body.append(start)
+   start.addEventListener('click',()=>{
+    document.getElementById('form')
+    form.style.display = "flex"    
+    })
+
+})();
+
+
+
+
+
+
 function createPlayer(playername, mark){
     const marker = mark
     const name = playername
     return{name, marker}
 }
 
-let player1 = createPlayer('Gary','X')
-let player2 = createPlayer('Mo', 'O')
-
 function getPlayer1(){
-    player1.name = prompt('Name of player 1')
-    return player1.name
+    let playernamespace = document.getElementById('playername1')
+     player1.name = playernamespace.value
+    playernamespace.value = ''
 }
+
+
 
 function getPlayer2(){
-    player2.name = prompt("Name of player 2")
+    let playernamespace2 = document.getElementById('playername2')
+     player2.name = playernamespace2.value 
+    playernamespace2.value =''
+
 }
+
 
 function clear(){
     for(let i = 0; i<9; i++){
@@ -23,15 +44,16 @@ function clear(){
 }
 
 const gameboard = (function(){
-
-    getPlayer1()
-    getPlayer2()
     
+    let gamearea = document.getElementById('gamearea')
+    let player1=createPlayer('p1','X')
+    let player2=createPlayer('p1','O')
+
     let currentPlayer = player1
     let board = document.createElement('div')
     board.setAttribute('id','board')
      squares = []
-    document.body.append(board)
+    gamearea.append(board)
     for(let i=0; i<9; i++){
         let square = document.createElement('div')
         square.setAttribute('id','square')
@@ -48,13 +70,14 @@ const gameboard = (function(){
             }
          else if (currentPlayer == player2){
             currentPlayer = player1   
-        }    
+                }    
         check() }}
         )
     }
-        }
-)
-();
+    
+       
+})
+
 
 function check(){
     if(squares[0].innerHTML == 'X' && squares[1].innerHTML == 'X' && squares[2].innerHTML == 'X' ||
@@ -91,5 +114,11 @@ function check(){
 
 
 
+const button = document.getElementById('submit')
+button.addEventListener('click',()=>{
+    gameboard()
+    getPlayer2()
 
+})
 
+//currently making a div for players to enter their name
