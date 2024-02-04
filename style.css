@@ -15,6 +15,14 @@ body{
 
 }
 
+#hud{
+    align-self:center;
+    text-align:center;
+    margin-top:20px;
+    font-size:36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(230, 54, 0);
+}
 #start{
     margin:auto;
     width:250px;

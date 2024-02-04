@@ -58,6 +58,10 @@ const gameboard = (function(){
     board.setAttribute('id','board')
      squares = []
     gamearea.append(board)
+    let hud = document.createElement('div')
+    hud.setAttribute('id', 'hud')
+    document.body.append(hud)
+    hud.innerHTML = `It's ${player1.name}'s turn`
     for(let i=0; i<9; i++){
         let square = document.createElement('div')
         square.setAttribute('id','square')
@@ -71,9 +75,13 @@ const gameboard = (function(){
             square.innerHTML = currentPlayer.marker
             if(currentPlayer == player1){
                 currentPlayer = player2
+                hud.innerHTML = `It's ${player2.name}'s turn`
+
             }
          else if (currentPlayer == player2){
             currentPlayer = player1   
+            hud.innerHTML = `It's ${player1.name}'s turn`
+
                 }    
         check() }}
         )
@@ -119,8 +127,9 @@ const button = document.getElementById('submit')
 button.addEventListener('click',()=>{
     form.style.display = 'none'
 submit.style.display = 'none'
-    gameboard()
     getPlayer1()
     getPlayer2()
+    gameboard()
+
 })
 
