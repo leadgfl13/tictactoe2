@@ -1,6 +1,7 @@
 let player1 = createPlayer('P1','X')
  let player2 = createPlayer('P2', 'O')
-
+ let player3 = createPlayer('tie', '=')
+let body = document.getElementById('body')
 
 
 // make a function for a start button that gets the players first, then when you submit the players, call the gabemboard object!
@@ -25,6 +26,43 @@ function createPlayer(playername, mark){
 }
  
 
+function displayWinner(player){
+    
+    gamearea.style.filter = 'blur(10px)'
+    hud.style.filter = 'blur(10px)'
+    let winner = document.createElement('div')
+    winner.setAttribute('id','winner')
+    document.body.append(winner)
+    let declare = document.createElement('div')
+    declare.innerHTML = `Congratulations! ${player.name} has won!`
+    winner.append(declare)
+    let buttonhouse = document.createElement('div')
+    buttonhouse.setAttribute('id','buttonhouse')
+    winner.append(buttonhouse)
+    let restart = document.createElement('button')
+    buttonhouse.append(restart)
+    restart.setAttribute('id', 'restart')
+    restart.innerHTML = 'Restart'
+    restart.addEventListener('click', ()=>{
+        location.reload()
+    })
+
+    let playagain = document.createElement('button')
+    buttonhouse.appendChild(playagain)
+    playagain.setAttribute('id','playagain')
+    playagain.innerHTML = 'Play Again'
+
+    playagain.addEventListener('click', ()=>{
+        hud.style.filter = 'none'
+        gamearea.style.filter = 'none'
+        winner.style.display = 'none'
+        
+        clear()
+        
+    })
+
+}
+
 function getPlayer1(){
     let playernamespace = document.getElementById('playername1')
      aname = playernamespace.value
@@ -41,7 +79,6 @@ function getPlayer2(){
     return{player2}
 
 }
-
 
 function clear(){
     for(let i = 0; i<9; i++){
@@ -99,7 +136,7 @@ function check(){
     squares[1].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[7].innerHTML == 'X' ||
     squares[2].innerHTML == 'X' && squares[5].innerHTML == 'X' && squares[8].innerHTML == 'X' 
     ){
-     alert(`${player1.name} wins!`)
+        displayWinner(player1)
      clear()
     }
     if (squares[0].innerHTML == 'O' && squares[1].innerHTML == 'O' && squares[2].innerHTML == 'O' ||
@@ -111,12 +148,12 @@ function check(){
      squares[1].innerHTML == 'O' && squares[4].innerHTML == 'O' && squares[7].innerHTML == 'O' ||
      squares[2].innerHTML == 'O' && squares[5].innerHTML == 'O' && squares[8].innerHTML == 'O')
      {
-     alert(`${player2.name} wins!`)
+        displayWinner(player2)
      clear()
      }
     else if (squares[0].innerHTML !='' && squares[1].innerHTML!='' && squares[2].innerHTML!='' && squares[3].innerHTML!=''
      && squares[4].innerHTML!='' && squares[5].innerHTML!='' &&squares[6].innerHTML!='' && squares[7].innerHTML!='' && squares[8].innerHTML!=''){
-            alert('tie')
+            displayWinner(player3)
             clear()   
              }
     }

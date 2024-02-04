@@ -10,6 +10,7 @@ body{
     height:600px;
     width:600px;
     margin:auto;
+    margin-top:100px;
     background-color:green;
     
 
@@ -78,4 +79,30 @@ label{
 input[type='text']{
 font-size:40px;
 background-color:skyblue;
+}
+
+#winner{
+    position:absolute;
+    top:50%;
+    left:50%;
+    height:200px;
+    gap:20px;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+    flex-direction:column;
+    width:400px;
+    background-color:beige;
+}
+
+#buttonhouse{
+    align-items:center;
+    justify-content:center;
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+}
+
+#restart{
+    height:20px;
 }
