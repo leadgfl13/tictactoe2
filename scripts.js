@@ -1,38 +1,44 @@
+let player1 = createPlayer('P1','X')
+ let player2 = createPlayer('P2', 'O')
+
+
+
 // make a function for a start button that gets the players first, then when you submit the players, call the gabemboard object!
 let start = (function(){
-   let start = document.createElement('button')
+   let start = document.getElementById('start')
    start.innerHTML = 'Start Game'
-   document.body.append(start)
    start.addEventListener('click',()=>{
+    start.remove()
+    let submit = document.getElementById('submit')
+    submit.style.display = 'flex'
     document.getElementById('form')
     form.style.display = "flex"    
     })
-
 })();
 
-
-
-
-
+//make a function when a game is won to either go again, or restart with new players
 
 function createPlayer(playername, mark){
     const marker = mark
     const name = playername
     return{name, marker}
 }
+ 
 
 function getPlayer1(){
     let playernamespace = document.getElementById('playername1')
-     player1.name = playernamespace.value
+     aname = playernamespace.value
+    player1.name = aname
     playernamespace.value = ''
+    return{player1}
 }
-
-
 
 function getPlayer2(){
     let playernamespace2 = document.getElementById('playername2')
-     player2.name = playernamespace2.value 
+     aname = playernamespace2.value 
+     player2.name = aname
     playernamespace2.value =''
+    return{player2}
 
 }
 
@@ -43,12 +49,10 @@ function clear(){
     }
 }
 
+//the actual gameboard.  Switches players on clicks, prevents clicks on 
+//squares with text, and checks for a win on every click
 const gameboard = (function(){
-    
     let gamearea = document.getElementById('gamearea')
-    let player1=createPlayer('p1','X')
-    let player2=createPlayer('p1','O')
-
     let currentPlayer = player1
     let board = document.createElement('div')
     board.setAttribute('id','board')
@@ -73,12 +77,10 @@ const gameboard = (function(){
                 }    
         check() }}
         )
-    }
-    
-       
+    }     
 })
 
-
+//logic for win conditions
 function check(){
     if(squares[0].innerHTML == 'X' && squares[1].innerHTML == 'X' && squares[2].innerHTML == 'X' ||
     squares[3].innerHTML == 'X' && squares[4].innerHTML == 'X' && squares[5].innerHTML == 'X' ||
@@ -112,13 +114,13 @@ function check(){
     }
 
 
-
-
+//submit button gets players names
 const button = document.getElementById('submit')
 button.addEventListener('click',()=>{
+    form.style.display = 'none'
+submit.style.display = 'none'
     gameboard()
+    getPlayer1()
     getPlayer2()
-
 })
 
-//currently making a div for players to enter their name
