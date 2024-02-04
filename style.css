@@ -1,5 +1,5 @@
 body{
-    background-color:blue;
+    background-image:url("lined\ paper.jpeg")
 }
 
 
@@ -55,7 +55,7 @@ body{
     justify-content:center;
     font-size:48px;
     border:2px black solid;
-    background-color:Gray;
+    background-color:rgb(201, 214, 235);
     margin:0px;
 
 }
@@ -83,8 +83,8 @@ background-color:skyblue;
 
 #winner{
     position:absolute;
-    top:50%;
-    left:50%;
+    top:40%;
+    left:37%;
     height:200px;
     gap:20px;
     align-items:center;
@@ -93,6 +93,8 @@ background-color:skyblue;
     flex-direction:column;
     width:400px;
     background-color:beige;
+    border-radius:5px;
+    box-shadow:2px 2px 2px 2px;
 }
 
 #buttonhouse{

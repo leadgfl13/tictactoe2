@@ -26,8 +26,7 @@ function createPlayer(playername, mark){
 }
  
 
-function displayWinner(player){
-    
+function displayWinner(player){    
     gamearea.style.filter = 'blur(10px)'
     hud.style.filter = 'blur(10px)'
     let winner = document.createElement('div')
@@ -43,6 +42,9 @@ function displayWinner(player){
     buttonhouse.append(restart)
     restart.setAttribute('id', 'restart')
     restart.innerHTML = 'Restart'
+    if(player == player3){
+        declare.innerHTML = "Tie Game!"
+    }
     restart.addEventListener('click', ()=>{
         location.reload()
     })
@@ -56,9 +58,7 @@ function displayWinner(player){
         hud.style.filter = 'none'
         gamearea.style.filter = 'none'
         winner.style.display = 'none'
-        
-        clear()
-        
+        clear()    
     })
 
 }
