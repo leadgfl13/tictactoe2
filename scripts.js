@@ -33,6 +33,7 @@ function displayWinner(player){
     winner.setAttribute('id','winner')
     document.body.append(winner)
     let declare = document.createElement('div')
+    declare.setAttribute('id', 'declare')
     declare.innerHTML = `Congratulations! ${player.name} has won!`
     winner.append(declare)
     let buttonhouse = document.createElement('div')
